@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Design Request Submitted - DressEmporium{% endblock %}
+
+{% block content %}
+<div class="container page-content text-center">
+    <h1>Thank You, {{ name }}!</h1>
+    <p>Your custom dress design request has been successfully submitted.</p>
+    <p>Our team will review your details and get in touch with you shortly via the email you provided to discuss the next steps, provide a quote, and answer any questions.</p>
+    <p>We're excited to help create your dream dress!</p>
+    <br>
+    <a href="{{ url_for('index') }}" class="btn btn-primary">Back to Homepage</a>
+    <a href="{{ url_for('premade_dresses') }}" class="btn btn-secondary">Browse Premade Dresses</a>
+</div>
+{% endblock %}

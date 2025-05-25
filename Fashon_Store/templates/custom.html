@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Design Your Custom Dress - DressEmporium{% endblock %}
+
+{% block content %}
+<div class="container page-content">
+    <h1>Design Your Dream Dress</h1>
+    <p>Tell us about your vision, and our expert designers will help bring it to life. Fill out the form below to get started.</p>
+
+    <form id="customDressForm" action="{{ url_for('custom_dress') }}" method="POST" class="custom-form">
+        <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dress_style">Preferred Dress Style:</label>
+            <select id="dress_style" name="dress_style">
+                <option value="">-- Select Style --</option>
+                <option value="a-line">A-Line</option>
+                <option value="ballgown">Ballgown</option>
+                <option value="sheath">Sheath</option>
+                <option value="mermaid">Mermaid</option>
+                <option value="empire">Empire Waist</option>
+                <option value="other">Other (describe below)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="fabric_preference">Fabric Preference:</label>
+            <input type="text" id="fabric_preference" name="fabric_preference" placeholder="e.g., Silk, Lace, Cotton, Chiffon">
+        </div>
+
+        <div class="form-group">
+            <label for="color_preference">Color Preference:</label>
+            <input type="text" id="color_preference" name="color_preference" placeholder="e.g., Ivory, Navy Blue, Emerald Green">
+        </div>
+        
+        <div class="form-group">
+            <label for="measurements">Measurements (if known):</label>
+            <textarea id="measurements" name="measurements" rows="3" placeholder="e.g., Bust: 34in, Waist: 28in, Hips: 38in, Height: 5'6\""></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="special_requests">Special Requests / Description:</label>
+            <textarea id="special_requests" name="special_requests" rows="5" placeholder="Describe your ideal dress, any specific details, links to inspiration images, etc."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit Your Design Request</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Basic form validation or interaction can go here
+    const customForm = document.getElementById('customDressForm');
+    if (customForm) {
+        customForm.addEventListener('submit', function(event) {
+            // Example: Simple confirmation before submitting
+            // const name = document.getElementById('name').value;
+            // if (!name) {
+            //     alert('Please enter your name.');
+            //     event.preventDefault(); // Stop submission
+            // }
+            // In a real app, you'd do more robust client-side validation
+        });
+    }
+</script>
+{% endblock %}

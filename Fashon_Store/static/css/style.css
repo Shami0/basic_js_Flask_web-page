@@ -1,0 +1,249 @@
+/* Basic Reset & Body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Header & Navigation */
+header {
+    background: #fff;
+    color: #333;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #d87093; /* PaleVioletRed */
+    text-decoration: none;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+}
+
+header ul li {
+    margin-left: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header ul li a:hover {
+    color: #d87093;
+}
+
+/* Hero Section */
+.hero {
+    background: #f4e7e7; /* Light pinkish background */
+    color: #333;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    color: #b25270; /* Darker pink */
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.btn-primary {
+    background-color: #d87093;
+    color: white;
+    border: 1px solid #d87093;
+}
+.btn-primary:hover {
+    background-color: #c06384;
+    border-color: #c06384;
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: #d87093;
+    border: 1px solid #d87093;
+}
+.btn-secondary:hover {
+    background-color: #f8f8f8;
+}
+
+.btn-sm {
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+/* Featured Products & Product Grid */
+.featured-products, .page-content {
+    padding: 40px 0;
+}
+.featured-products h2, .page-content h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #b25270;
+}
+.page-content h1 {
+    font-size: 2.2em;
+}
+.page-content p {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    color: #555;
+}
+.text-center { text-align: center !important; }
+.text-center p { text-align: center !important; }
+
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 200px; /* Fixed height */
+    object-fit: cover; /* Crop images to fit */
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.product-card .price {
+    font-size: 1.2em;
+    color: #d87093;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-card .description {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
+    min-height: 60px; /* Ensure cards have similar height for description area */
+}
+
+
+/* Custom CTA Section */
+.custom-cta {
+    background-color: #d8bfd8; /* Thistle or light purple */
+    color: #333;
+    padding: 50px 0;
+    text-align: center;
+}
+.custom-cta h2 {
+    margin-bottom: 15px;
+    color: #6a3275; /* Darker purple */
+}
+
+/* Custom Form */
+.custom-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}

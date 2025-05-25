@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to DressEmporium - Premium & Custom Dresses{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="container">
+        <h1>Find Your Perfect Dress</h1>
+        <p>Exquisite premade collections and bespoke custom designs, crafted for you.</p>
+        <a href="{{ url_for('premade_dresses') }}" class="btn btn-primary">Shop Premade</a>
+        <a href="{{ url_for('custom_dress') }}" class="btn btn-secondary">Design Your Own</a>
+    </div>
+</section>
+
+<section class="featured-products container">
+    <h2>Featured Premade Dresses</h2>
+    <div class="product-grid">
+        {% if featured_dresses %}
+            {% for dress in featured_dresses %}
+            <div class="product-card">
+                <img src="{{ url_for('static', filename=dress.image if dress.image else 'images/premade_placeholder.jpg') }}" alt="{{ dress.name }}">
+                <h3>{{ dress.name }}</h3>
+                <p class="price">₹{{ dress.price }}</p>
+                <p class="description">{{ dress.description[:100] }}...</p> {# Short description #}
+                <a href="#" class="btn btn-sm">View Details</a> {# Link to a product detail page later #}
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No featured dresses available at the moment.</p>
+        {% endif %}
+    </div>
+</section>
+
+<section class="custom-cta">
+    <div class="container">
+        <h2>Can't find what you're looking for?</h2>
+        <p>Let us create a unique dress tailored to your exact specifications and style.</p>
+        <a href="{{ url_for('custom_dress') }}" class="btn btn-primary">Start Designing</a>
+    </div>
+</section>
+{% endblock %}

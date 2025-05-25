@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Premade Collection - DressEmporium{% endblock %}
+
+{% block content %}
+<div class="container page-content">
+    <h1>Our Premium Premade Collection</h1>
+    <p>Discover our curated selection of ready-to-wear dresses, crafted with the finest materials and attention to detail.</p>
+
+    <div class="product-grid">
+        {% if dresses %}
+            {% for dress in dresses %}
+            <div class="product-card">
+                <img src="{{ url_for('static', filename=dress.image if dress.image else 'images/premade_placeholder.jpg') }}" alt="{{ dress.name }}">
+                <h3>{{ dress.name }}</h3>
+                <p class="price">₹{{ dress.price }}</p>
+                <p class="description">{{ dress.description }}</p>
+                <a href="#" class="btn btn-sm">Add to Cart</a> {# Simple button, no cart functionality yet #}
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No premade dresses available at the moment. Please check back soon!</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
